@@ -36,6 +36,7 @@ class PyDroidIPCam:
         self._ssl: bool = ssl
 
         if username and password:
+            print("pwd:"+password)
             self._auth = aiohttp.BasicAuth(username, password=password)
 
     @property
@@ -68,7 +69,6 @@ class PyDroidIPCam:
         """Make the actual request and return the parsed response."""
         url: str = f"{self.base_url}{path}"
         data = None
-
         try:
             async with self.websession.get(
                 url, auth=self._auth, timeout=self._timeout
@@ -77,7 +77,7 @@ class PyDroidIPCam:
                     if response.headers["content-type"] == "application/json":
                         data = await response.json()
                     else:
-                        data = await response.text().find("Ok") != -1
+                        data = await response.text()
 
         except (asyncio.TimeoutError, aiohttp.ClientError) as error:
             _LOGGER.error("Failed to communicate with IP Webcam: %s", error)
@@ -90,7 +90,6 @@ class PyDroidIPCam:
     async def update(self) -> None:
         """Fetch the latest data from IP Webcam."""
         status_data = await self._request("/status.json?show_avail=1")
-
         if not status_data:
             return
 
@@ -156,7 +155,7 @@ class PyDroidIPCam:
 
         return available
 
-    def export_sensor(self, sensor) -> Tuple(str, Any):
+    def export_sensor(self, sensor) -> (str, Any):
         """Return (value, unit) from a sensor node."""
         value = None
         unit = None

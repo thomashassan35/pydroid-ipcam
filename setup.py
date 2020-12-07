@@ -4,6 +4,7 @@ from setuptools import setup, find_packages
 
 long_description = open("README.md").read()
 
+
 setup(
     name="pydroid-ipcam",
     version="1.3.0",
@@ -26,3 +27,5 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
 )
+
+
