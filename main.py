@@ -68,15 +68,8 @@ def print_data(cam):
 def update_data(cam):
     motion_update_result = put_motion_event_thingin(uuid=motion_uuid, iri=motion_iri, motion_data=cam.sensor_data["motion_event"], access_token=token)
     luminance_update_result = put_luminance_thingin(uuid=luminance_uuid, iri=luminance_iri, luminance_data=cam.sensor_data["light"], access_token=token)
-    print(motion_update_result.text)
-    print(luminance_update_result.text)
-
-
-async def torch(on):
-    async with aiohttp.ClientSession() as client:
-        cam = PyDroidIPCam(websession=client, host=ip_local, username=camuser, password=campwd, port=8080, ssl=False)
-        futures = cam.torch(on)
-        await asyncio.gather(*futures)
+    print("Motion data update", motion_update_result.text)
+    print("Luminance data update",luminance_update_result.text)
 
 
 # ##BOOTSTRAP DATA UUIDS LOADING FROM THINGIN RESPONSE"
