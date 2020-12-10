@@ -22,6 +22,13 @@ def set_domain(domain_to_insert, data):
                 edge["_iri"] = edge["_iri"].replace(inserted_domain_string, domain_to_insert)
     return data
 
+def set_ip(ip_to_insert, data):
+    inserted_ip_string = "|local-ip|"
+    for node in data:
+        if "http://www.w3.org/ns/tdo#href" in node:
+            node["http://www.w3.org/ns/tdo#href"] = node["http://www.w3.org/ns/tdo#href"].replace(inserted_ip_string, ip_to_insert)
+    return data
+
 
 
 ##BOOSTRAP SEQUENCE##
@@ -34,11 +41,13 @@ for arg in sys.argv:
 token = sys.argv[1]
 domain_to_insert = sys.argv[2]
 name = sys.argv[3]
+ip = sys.argv[4]
 print("###########################")
 
 
 my_uuid = uuid.uuid3(namespace=uuid.NAMESPACE_DNS, name=name)
 my_data = set_domain(domain_to_insert, initial_data_json)
+my_data = set_ip(ip, my_data)
 my_data = append_my_uuid(my_uuid, my_data)
 
 print("######### Data ##########")
