@@ -48,6 +48,39 @@ initial_data_json = [
       "_class": "http://elite.polito.it/ontologies/dogont.owl#MovementSensor"
     },
     {
+      "_iri": "|inserted_domain|bureau-Hue.state",
+      "_domain": "|inserted_domain|",
+      "_classes": [
+        "http://www.w3.org/ns/sosa/Sensor",
+        "https://www.w3.org/2019/wot/td#PropertyAffordance"
+      ],
+      "_visibility": 0,
+      "http://www.w3.org/ns/tdo#href": "https://192.168.1.47/api/75WMpeSrs1ogZ6kxD79ez-fseyPxaCNkt-r8YL1z/lights/1",
+      "https://www.w3.org/2019/wot/td#name": "state",
+      "_class": "http://www.w3.org/ns/sosa/Sensor"
+    },
+    {
+      "_iri": "|inserted_domain|salon-Hue",
+      "_domain": "|inserted_domain|",
+      "_classes": [
+        "http://elite.polito.it/ontologies/dogont.owl#Lamp"
+      ],
+      "_visibility": 0,
+      "https://www.w3.org/2019/wot/td#description": "Phillips Hue du salon",
+      "https://www.w3.org/2019/wot/td#name": "salon-Hue",
+      "_outE": [
+        {
+          "_property": "https://www.w3.org/2019/wot/td#hasPropertyAffordance",
+          "_iri": "|inserted_domain|salon-Hue.state"
+        },
+        {
+          "_property": "http://ngsild.example.org/ngsild-ontology#isContainedIn",
+          "_iri": "|inserted_domain|salon"
+        }
+      ],
+      "_class": "http://elite.polito.it/ontologies/dogont.owl#Lamp"
+    },
+    {
       "_iri": "|inserted_domain|androidIPCam.luminance",
       "_domain": "|inserted_domain|",
       "_classes": [
@@ -69,6 +102,82 @@ initial_data_json = [
       "_visibility": 0,
       "http://www.w3.org/ns/tdo#href": "http://|local-ip|:8080/video",
       "https://www.w3.org/2019/wot/td#name": "camera",
+      "_class": "http://www.w3.org/ns/sosa/Sensor",
+      "_outE": [
+        {
+          "_property": "http://www.w3.org/ns/sosa/observes",
+          "_iri": "|inserted_domain|ecran.display"
+        }
+      ]
+    },
+    {
+      "_iri": "|inserted_domain|ecran",
+      "_domain": "|inserted_domain|",
+      "_classes": [
+        "http://orange-labs.fr/fog/ont/iot-plus.owl#Screen"
+      ],
+      "_visibility": 0,
+      "https://www.w3.org/2019/wot/td#name": "ecranPC",
+      "_class": "http://orange-labs.fr/fog/ont/iot-plus.owl#Screen",
+      "_outE": [
+        {
+          "_property": "http://ngsild.example.org/ngsild-ontology#isContainedIn",
+          "_iri": "|inserted_domain|bureau"
+        },
+        {
+          "_property": "https://www.w3.org/2019/wot/td#hasPropertyAffordance",
+          "_iri": "|inserted_domain|ecran.display"
+        }
+      ]
+    },
+    {
+      "_iri": "|inserted_domain|ecran.display",
+      "_domain": "|inserted_domain|",
+      "_classes": [
+        "http://www.w3.org/ns/sosa/Sensor",
+        "http://www.w3.org/2007/uwa/context/hardware.owl#Display"
+      ],
+      "_visibility": 0,
+      "https://www.w3.org/2019/wot/td#name": "ecranDisplay",
+      "_class": "http://www.w3.org/2007/uwa/context/hardware.owl#Display",
+      "_outE": [
+        {
+          "_property": "http://www.w3.org/ns/sosa/observes",
+          "_iri": "|inserted_domain|androidIPCam.camera"
+        }
+      ]
+    },
+    {
+      "_iri": "|inserted_domain|chambre-Hue",
+      "_domain": "|inserted_domain|",
+      "_classes": [
+        "http://elite.polito.it/ontologies/dogont.owl#Lamp"
+      ],
+      "_visibility": 0,
+      "https://www.w3.org/2019/wot/td#description": "Phillips Hue de la chambre",
+      "https://www.w3.org/2019/wot/td#name": "chambre-Hue",
+      "_outE": [
+        {
+          "_property": "http://ngsild.example.org/ngsild-ontology#isContainedIn",
+          "_iri": "|inserted_domain|chambre"
+        },
+        {
+          "_property": "https://www.w3.org/2019/wot/td#hasPropertyAffordance",
+          "_iri": "|inserted_domain|chambre-Hue.state"
+        }
+      ],
+      "_class": "http://elite.polito.it/ontologies/dogont.owl#Lamp"
+    },
+    {
+      "_iri": "|inserted_domain|salon-Hue.state",
+      "_domain": "|inserted_domain|",
+      "_classes": [
+        "http://www.w3.org/ns/sosa/Sensor",
+        "https://www.w3.org/2019/wot/td#PropertyAffordance"
+      ],
+      "_visibility": 0,
+      "http://www.w3.org/ns/tdo#href": "https://192.168.1.47/api/75WMpeSrs1ogZ6kxD79ez-fseyPxaCNkt-r8YL1z/lights/2",
+      "https://www.w3.org/2019/wot/td#name": "state",
       "_class": "http://www.w3.org/ns/sosa/Sensor"
     },
     {
@@ -81,6 +190,18 @@ initial_data_json = [
       "http://www.w3.org/ns/tdo#href": "http://|local-ip|:8080/enabletorch",
       "https://www.w3.org/2019/wot/td#name": "enableTorch",
       "_class": "http://www.w3.org/ns/sosa/Actuator"
+    },
+    {
+      "_iri": "|inserted_domain|chambre-Hue.state",
+      "_domain": "|inserted_domain|",
+      "_classes": [
+        "http://www.w3.org/ns/sosa/Sensor",
+        "https://www.w3.org/2019/wot/td#PropertyAffordance"
+      ],
+      "_visibility": 0,
+      "http://www.w3.org/ns/tdo#href": "https://192.168.1.47/api/75WMpeSrs1ogZ6kxD79ez-fseyPxaCNkt-r8YL1z/lights/3",
+      "https://www.w3.org/2019/wot/td#name": "state",
+      "_class": "http://www.w3.org/ns/sosa/Sensor"
     },
     {
       "_iri": "|inserted_domain|chambre",
@@ -97,6 +218,43 @@ initial_data_json = [
         }
       ],
       "_class": "http://elite.polito.it/ontologies/dogont.owl#Room"
+    },
+  {
+    "_iri": "|inserted_domain|studio",
+    "_domain": "|inserted_domain|",
+    "_classes": [
+      "http://elite.polito.it/ontologies/dogont.owl#Room"
+    ],
+    "_visibility": 0,
+    "https://www.w3.org/2019/wot/td#name": "studio",
+    "_outE": [
+      {
+        "_property": "http://ngsild.example.org/ngsild-ontology#connectsTo",
+        "_iri": "|inserted_domain|salon"
+      }
+    ],
+    "_class": "http://elite.polito.it/ontologies/dogont.owl#Room"
+  },
+    {
+      "_iri": "|inserted_domain|bureau-Hue",
+      "_domain": "|inserted_domain|",
+      "_classes": [
+        "http://elite.polito.it/ontologies/dogont.owl#Lamp"
+      ],
+      "_visibility": 0,
+      "https://www.w3.org/2019/wot/td#description": "Phillips Hue du bureau",
+      "https://www.w3.org/2019/wot/td#name": "bureau-Hue",
+      "_outE": [
+        {
+          "_property": "http://ngsild.example.org/ngsild-ontology#isContainedIn",
+          "_iri": "|inserted_domain|bureau"
+        },
+        {
+          "_property": "https://www.w3.org/2019/wot/td#hasPropertyAffordance",
+          "_iri": "|inserted_domain|bureau-Hue.state"
+        }
+      ],
+      "_class": "http://elite.polito.it/ontologies/dogont.owl#Lamp"
     },
     {
       "_iri": "|inserted_domain|bureau",
@@ -146,7 +304,6 @@ initial_data_json = [
       "_class": "http://elite.polito.it/ontologies/dogont.owl#Room"
     }
   ]
-
 
 
 
