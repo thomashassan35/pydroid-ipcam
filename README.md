@@ -5,6 +5,7 @@
 Forked from https://github.com/home-assistant-libs/pydroid-ipcam 
 
 Content:
+
 Requirements: python3 + android device connected to the same local network
 Optional : raspberry + sensehat, other objects
 
@@ -80,6 +81,7 @@ Optional : raspberry + sensehat, other objects
 Forked from https://github.com/home-assistant-libs/pydroid-ipcam 
 
 Contenu du TP:
+
 Requis : un PC avec python3 installé + Device android connectés au même réseau local et à internet
 Optionel : raspberry + sensehat, autre objets
 
