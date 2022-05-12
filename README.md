@@ -32,8 +32,8 @@ Optional : raspberry + sensehat, other objects
 	- Test your environment and visualize initial data: 
 		- Find your android device's IP address
 		- Connect to https://tech2.thinginthefuture.com. The guest credentials for the exercice are: 
-			Email : thingin-demo@orange.com
-			Password : thingin-demo147
+			Email : xxxxx **These credentials are no longer available, you can contact our team at https://tech2.thinginthefuture.com/contact and ask for an account**
+			Password : xxxxx **These credentials are no longer available, you can contact our team at https://tech2.thinginthefuture.com/contact and ask for an account**
 		- Get your user token: Develop tab -> Get My Thing in token -> Copy to Clipboard
 		- Start the android IP Webcam server on the device. If necessary change the login/password. 
 		- Execute the script torch_test.py by using the arguments used during installation. Example : ``` python3 torch_test.py  "Bearer 12345" "http://www.example.com/insa/" "thomas_hassan" "192.168.1.18" "Test" "Test" "ON" ```
@@ -108,8 +108,8 @@ Optionel : raspberry + sensehat, autre objets
 	- Test d'installation et visualisation des données initiales : 
 		- Récupérer l'ip de votre device android 
 		- Se connecter à https://tech2.thinginthefuture.com. Les credentials à utiliser sont : 
-			Email : thingin-demo@orange.com
-			Password : thingin-demo147
+			Email : xxxxx **These credentials are no longer available, you can contact our team at https://tech2.thinginthefuture.com/contact and ask for an account**
+			Password : xxxxx **These credentials are no longer available, you can contact our team at https://tech2.thinginthefuture.com/contact and ask for an account**
 		- Récupérer son token : onglet Develop -> Get My Thing in token -> Copy to Clipboard
 		- Lancer le serveur android ipcam sur votre device. Si nécessaire changer la résolution vidéo et le login/mot de passe. Si pas de login mot de passe dans l'application, laissez les arguments vides ("") en lançant les scripts
 		- Tester l'environnement : exécuter le script torch_test.py en utilisant les arguments correspondants à votre installation. Exemple : ``` python3 torch_test.py  "Bearer 12345" "http://www.example.com/insa/" "thomas_hassan" "192.168.1.18" "Test" "Test" "ON" ```
